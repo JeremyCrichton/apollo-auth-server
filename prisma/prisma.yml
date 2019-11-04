@@ -1,8 +1,5 @@
-# Main config file for the Prisma setup
-
 # The HTTP endpoint for your Prisma API
-#endpoint: ''
-endpoint: https://us1.prisma.sh/jeremy-crichton/react-apollo-prisma-auth/dev
+endpoint: ${env:PRISMA_ENDPOINT}
 
 # Points to the file that contains your datamodel
 datamodel: datamodel.prisma

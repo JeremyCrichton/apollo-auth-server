@@ -1,6 +1,5 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import { APP_SECRET } from '../utils';
 
 const Mutation = {
   async signup(parent, args, context, info) {
@@ -9,7 +8,7 @@ const Mutation = {
     // Use prisma client instance to store new user in the db
     const user = await context.prisma.createUser({ ...args, password });
     // Generate a JWT
-    const token = jwt.sign({ userId: user.id }, APP_SECRET);
+    const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET);
 
     // Return an object adhering to the shape of AuthPayload per our GraphQL schema
     return {

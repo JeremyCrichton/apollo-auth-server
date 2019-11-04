@@ -8,12 +8,14 @@
     "@babel/node": "^7.6.3",
     "@babel/preset-env": "^7.6.3",
     "bcryptjs": "^2.4.3",
+    "env-cmd": "^10.0.1",
     "graphql-yoga": "^1.18.3",
     "jsonwebtoken": "^8.5.1",
     "nodemon": "^1.19.4",
     "prisma-client-lib": "^1.34.10"
   },
   "scripts": {
-    "start": "nodemon src/index.js --ext js,graphql --exec babel-node"
+    "dev": "env-cmd -f ./config/dev.env nodemon src/index.js --ext js,graphql --exec babel-node",
+    "deploy-dev": "prisma deploy -e ./config/dev.env"
   }
 }
