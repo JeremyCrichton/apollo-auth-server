@@ -1,1 +1,1 @@
-A biolerplate dockerized GraphQL server with authentication utilizing Prisma.
+A boilerplate dockerized GraphQL server with authentication utilizing Prisma.
